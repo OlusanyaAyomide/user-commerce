@@ -1,7 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
 
-const themes = [{ name: 'Light' }, { name: 'Dark' }, { name: 'Emerald' }, { name: 'Pink' }];
+const themes = [
+  { name: 'Light' }, { name: 'Grayyellow' }, { name: 'Lime' }, { name: 'Pink' },
+  { name: 'Darkneon' },{ name: 'Pinkblue' }, { name: 'deepblue' },
+  { name: 'Yellowblue' }, { name: 'Liberty' },{name:'Deepgreen'},{name:'Pinkblue'},{name:"Deeppink"}
+];
 
 const ThemeChanger = () => {
   const [mounted, setMounted] = useState(false);
