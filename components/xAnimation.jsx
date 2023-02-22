@@ -1,37 +1,72 @@
-
-export const toggleAnimation=(isToggled,number)=>{
-    if (!isToggled){
-        console.log(number)
+export const toggleAnimation=(number)=>{
         return{
+            initial:{
+             rotate:0,
+             height:"4px",
+             y:0,
+            },
             animate:{
-                rotate:number === 1?"225deg":"-225deg",
-                // originX:0,
+                rotate:number === 1?"45deg":"-45deg",
                 y:number === 1?10:-10,
-                transiton:{
-                    duration:0.5
+                height:"3px",
+                transition:{
+                    duration:0.5,
+                    stiffness:1
                 }
-            }
+            },
+            animateback:{
+                    rotate:0,
+                    height:"4px",
+                    y:0,
+                transition:{
+                    duration:0.5,
+                    stiffness:1
+                }
+            },
+
 
         }
     }
-    if (isToggled){
+
+export const toggleCenter = ()=>{
         return{
             initial:{
-                rotate:number === 1?"225deg":"45deg",
-       
+                height:"4px",
+                x:0,
+                opacity:1,
             },
             animate:{
-                y:0,
-                rotate:0,
-                transiton:{
+                x:50,
+                opacity:0,
+                height:"0px",
+                transition:{
                     duration:0.5,
+                    stiffness:1
                 }
+            },
+            animateback:{
+                x:0,
+                opacity:1,
+                height:"4px",
+                transition:{
+                    duration:0.5,
+                    stiffness:1
             }
-
-        }
+          
+        }   
+    
     }
 }
 
-const toggleCenter = (isToggled){
-    
+export const DropDownMotion={
+    initial:{
+        height:"0px",
+    },
+    animate:{
+        height:"fit-content",
+        transition:{
+            duration:0.5,
+            stiffness:1
+        }
+    }
 }

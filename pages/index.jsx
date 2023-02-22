@@ -31,7 +31,7 @@ export default function index() {
      <input type="text" className='w-full rounded-xl text-sm px-6 py-2 bg-inputvar text-normal-text border border-normal-text/50 outline-none' placeholder='Enter a text'/>
     </div>
     <div className='my-4 h-[450px] w-[300px] overflow-hidden relative before:absolute before:inset-0 before:bg-overlay'>
-      <Image src={gown1}/>
+      <Image src={gown1} alt=""/>
     </div>
     </div>
  

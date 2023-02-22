@@ -4,7 +4,7 @@ import { useTheme } from 'next-themes';
 const themes = [
   { name: 'Light' }, { name: 'Grayyellow' }, { name: 'Lime' }, { name: 'Pink' },
   { name: 'Darkneon' },{ name: 'Pinkblue' }, { name: 'deepblue' },
-  { name: 'Yellowblue' }, { name: 'Liberty' },{name:'Deepgreen'},{name:'Pinkblue'},{name:"Deeppink"}
+  { name: 'Yellowblue' }, { name: 'Liberty' },{name:'Deepgreen'},{name:"Deeppink"}
 ];
 
 const ThemeChanger = () => {

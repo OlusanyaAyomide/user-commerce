@@ -1,6 +1,6 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
+
 
 
 :root{
@@ -137,3 +137,21 @@
 .toggler{
   @apply bg-normal-text h-[4px] w-full inline-block
 }
+
+.header-text{
+  @apply  font-semibold text-lg 
+}
+
+.isactive {
+  @apply hover:before:absolute hover:before:bg-dominant hover:before:h-[2px] hover:before:bottom-0 hover:before:w-[50%] hover:before:left-[25%] before:transition-all before:duration-1000
+}
+
+.dropdown{
+  box-shadow:0px 0px 5px var(--text-thick)
+}
+.onhover{
+  @apply hover:before:inset-0 overflow-hidden hover:before:bg-overlay hover:before:absolute hover:text-[105%] hover:before:rounded-md
+}
+
+
+@tailwind utilities;
