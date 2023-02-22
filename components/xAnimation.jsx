@@ -70,3 +70,17 @@ export const DropDownMotion={
         }
     }
 }
+export const searchMotion ={
+    initial:{
+        y:-40,
+        opacity:0
+    },
+    animate:{
+        y:0,
+        opacity:1,
+        transition:{
+            stiffness:0,
+            duration:0.2
+        }
+    }
+}
