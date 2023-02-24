@@ -1,5 +1,6 @@
 import { createContext,useState } from "react";
 import {categoryItems} from "../store/constants"
+import { Viewsettings } from "../store/constants";
 
 const Allcontext = createContext({
     isnavActive:false,
@@ -13,7 +14,11 @@ const Allcontext = createContext({
     isSearching:false,
     setIsSearching:function(){},
     onOverLay:false,
-    setOnOverLay:function(){}
+    setOnOverLay:function(){},
+    settings:Viewsettings,
+    setSettings:function(){},
+    isSideActive:false,
+    setIsSideActive:function(){}
     
 })
 
@@ -24,6 +29,8 @@ export function AllContextProvider(props){
     const [cartItem,setCartItem] = useState([])
     const [isSearching,setIsSearching] = useState(false)
     const [onOverLay,setOnOverLay] = useState(false)
+    const [settings,setSettings] = useState(Viewsettings)
+    const [isSideActive,setIsSideActive] = useState(false)
 
     const context = {
         isnavActive,
@@ -38,6 +45,10 @@ export function AllContextProvider(props){
         setIsSearching,
         setOnOverLay,
         onOverLay,
+        settings,
+        setSettings,
+        isSideActive,
+        setIsSideActive,
     }
     return <Allcontext.Provider value={context}>{props.children}</Allcontext.Provider>
 }

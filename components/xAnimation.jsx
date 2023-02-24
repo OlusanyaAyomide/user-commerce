@@ -1,3 +1,5 @@
+import { animate } from "framer-motion"
+
 export const toggleAnimation=(number)=>{
         return{
             initial:{
@@ -7,7 +9,7 @@ export const toggleAnimation=(number)=>{
             },
             animate:{
                 rotate:number === 1?"45deg":"-45deg",
-                y:number === 1?10:-10,
+                y:number === 1?9.2:-9.2,
                 height:"3px",
                 transition:{
                     duration:0.5,
@@ -82,5 +84,25 @@ export const searchMotion ={
             stiffness:0,
             duration:0.2
         }
+    }
+}
+
+export const NavBarMotion = {
+    initial:{
+        x:-500,
+    },
+    animate:{
+        x:0,
+        transition:{
+            stiffness:1,
+            duration:0.5
+        }
+    },
+    animateback:{
+        x:-500,
+        transition:{
+            stiffness:1,
+            duration:0.5
+        }   
     }
 }

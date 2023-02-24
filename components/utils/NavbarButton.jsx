@@ -5,9 +5,16 @@ import { motion,useAnimation } from 'framer-motion'
 
 export default function NavbarButton() {
     const [mounted,setMounted] = useState(false)
-    const {isnavActive,setisNavActive} = useContext(AllContext)
+    const {isnavActive,setisNavActive,setOnOverLay,setIsSideActive,setIsSearching} = useContext(AllContext)
     const control = useAnimation()
     
+    const handleChange = ()=>{
+      setOnOverLay((prev=>!prev))
+      setIsSideActive((prev=>!prev))
+      setisNavActive((prev=>!prev))
+      setIsSearching(false)
+    }
+
     useEffect(()=>{
       if (!mounted){
         setMounted(true)
@@ -18,7 +25,7 @@ export default function NavbarButton() {
     
     },[isnavActive])
   return (
-        <button className='flex flex-col justify-between h-[22px]  w-[30px] cursor-pointer' onClick={()=>{setisNavActive((prev=>!prev))}}>
+        <button className='flex flex-col justify-between h-[22px]  w-[30px] cursor-pointer' onClick={handleChange}>
             <motion.span className='toggler' variants={toggleAnimation(1)} initial="initial" animate={control}></motion.span>
             <motion.span className='toggler' variants={toggleCenter()} initial="initial" animate={control}></motion.span>
             <motion.span className='toggler' variants={toggleAnimation(3)} initial="initial" animate={control}></motion.span>

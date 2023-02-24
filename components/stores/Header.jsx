@@ -9,10 +9,11 @@ import SearchDiv from './Searchdiv'
 import Allcontext from '@/store/Allcontext'
 
 export default function Header() {
-  const {isSearching,setIsSearching,setOnOverLay} = useContext(Allcontext)
+  const {isSearching,setIsSearching,setOnOverLay,setIsSideActive} = useContext(Allcontext)
   const handleSearch=()=>{
     setIsSearching((prev=>!prev))
     setOnOverLay((prev=>!prev))
+    setIsSideActive(false)
   }
   return (
     <section className='relative z-20'>
@@ -27,7 +28,7 @@ export default function Header() {
         </div>
         <div className='flex cont py-2 items-center relative bg-bg-main'>
           <NavbarButton/>
-          <span className='text-3xl mx-4 md:mx-6 lg:mx-7 text-thick-text' onClick={handleSearch}>
+          <span className='text-3xl mx-4 md:mx-6 lg:mx-7 text-thick-text cursor-pointer' onClick={handleSearch}>
             <BsSearch/>
           </span>
           <Categories/>
