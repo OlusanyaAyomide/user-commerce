@@ -12,8 +12,8 @@ export const Viewsettings = {
     stripBackground: true,
     textStrings: [
       "Hello World from here and overboard from life",
-      "Shopping just Got Easy With User Commerce",
-      "A user FriendLy Design",
+      // "Shopping just Got Easy With User Commerce",
+      // "A user FriendLy Design",
     ],
   },
 };

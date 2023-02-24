@@ -5,12 +5,14 @@ import { motion,useAnimation } from 'framer-motion'
 
 export default function NavbarButton() {
     const [mounted,setMounted] = useState(false)
-    const {isnavActive,setisNavActive,setOnOverLay,setIsSideActive,setIsSearching} = useContext(AllContext)
+    const {isnavActive,setisNavActive,setOnOverLay,isSearching,setIsSearching} = useContext(AllContext)
     const control = useAnimation()
     
     const handleChange = ()=>{
-      setOnOverLay((prev=>!prev))
-      setIsSideActive((prev=>!prev))
+      setOnOverLay((prev=>{
+        if(isSearching){return true}
+        return !prev
+      }))
       setisNavActive((prev=>!prev))
       setIsSearching(false)
     }

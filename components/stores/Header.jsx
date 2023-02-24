@@ -9,11 +9,14 @@ import SearchDiv from './Searchdiv'
 import Allcontext from '@/store/Allcontext'
 
 export default function Header() {
-  const {isSearching,setIsSearching,setOnOverLay,setIsSideActive} = useContext(Allcontext)
+  const {isSearching,setIsSearching,setOnOverLay,isnavActive,setisNavActive} = useContext(Allcontext)
   const handleSearch=()=>{
     setIsSearching((prev=>!prev))
-    setOnOverLay((prev=>!prev))
-    setIsSideActive(false)
+    setOnOverLay(prev=>{
+      if(isnavActive){return true}
+      return !prev
+    })
+    setisNavActive(false)
   }
   return (
     <section className='relative z-20'>

@@ -17,8 +17,6 @@ const Allcontext = createContext({
     setOnOverLay:function(){},
     settings:Viewsettings,
     setSettings:function(){},
-    isSideActive:false,
-    setIsSideActive:function(){}
     
 })
 
@@ -30,7 +28,7 @@ export function AllContextProvider(props){
     const [isSearching,setIsSearching] = useState(false)
     const [onOverLay,setOnOverLay] = useState(false)
     const [settings,setSettings] = useState(Viewsettings)
-    const [isSideActive,setIsSideActive] = useState(false)
+
 
     const context = {
         isnavActive,
@@ -47,8 +45,6 @@ export function AllContextProvider(props){
         onOverLay,
         settings,
         setSettings,
-        isSideActive,
-        setIsSideActive,
     }
     return <Allcontext.Provider value={context}>{props.children}</Allcontext.Provider>
 }

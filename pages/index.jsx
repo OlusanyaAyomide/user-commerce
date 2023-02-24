@@ -4,7 +4,6 @@ import gown1 from "../public/gown1.png"
 import Image from 'next/image'
 
 export default function index() {
-  console.log(gown1)
   const array = [
     {big:"header Text 1",small:"small text 1"},
     {big:"header Text 2",small:"small text 2"},

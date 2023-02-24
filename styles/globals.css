@@ -12,6 +12,7 @@
   --inpadding:white;
   --overlay:rgb(0 0 0 / 0.1);
   --inputvar:#eaeef5;
+  --thickoverlay:rgb(0 0 0 / 0.5);
 
   font-size: 14px;
   font-family:"noto";
@@ -19,6 +20,18 @@
   padding: 0;
   box-sizing: border-box;
 
+}
+
+[data-theme = 'lightD']{
+  --background-secondary: theme("colors.black");
+  --background-light: black;
+  --dominant: #002ae4;
+  --text-thick:#b5bad1;
+  --text-normal:theme("colors.gray.200");
+  --inpadding:white;
+  --overlay:rgb(255 255 255 / 0.1);
+  --inputvar:#111118;
+  --thickoverlay:rgb(255 255 255 / 0.6);
 }
 
 
@@ -32,8 +45,11 @@
   --inpadding:white;
   --overlay:rgb(255 255 255 / 0.1);
   --inputvar:#8f8e8e;
+  --thickoverlay:rgb(255 255 255 / 0.6);
 
 }
+
+
 
 [data-theme = 'lime'] {
     --dominant:#00DE00;
@@ -49,6 +65,7 @@
   --inpadding:white;
   --overlay:rgb(75 85 99 / 0.2);
   --inputvar:#aca39d;
+  --thickoverlay:rgb(75 85 99 / 0.6);
 }
 
 [data-theme = 'darkneon']{
@@ -60,6 +77,7 @@
   --inpadding:white;
   --overlay:rgb(255 255 255 / 0.1);
   --inputvar:#111118;
+  --thickoverlay:rgb(255 255 255 / 0.6);
 } 
 
 [data-theme = 'deeppink']{
@@ -78,10 +96,11 @@
   --background-light: #F2D4D6;
   --background-secondary:white;
   --dominant :#213F99;
-  --text-thick:rgb(109, 11, 60);;
+  --text-thick:rgb(109, 11, 60);
   --inpadding:white;
   --overlay:rgb(75 85 99 / 0.2);
   --inputvar:#b39fa0;
+  --thickoverlay:rgb(75 85 99 / 0.6);
 }
 
 
@@ -110,7 +129,7 @@
   --text-thick:white;
   --text-normal:theme('colors.gray.200');
   --overlay:rgb(0 0 0 / 0.2);
-  --inputvar:rgba(0, 0, 0, 0.295)
+  --inputvar:rgba(0, 0, 0, 0.295);
 }
 
 [data-theme = 'deepgreen']{
@@ -133,10 +152,14 @@
 .dropdown{
   box-shadow:0px 0px 5px var(--text-thick)
 }
+.roundshadow{
+  box-shadow:0px 0px 5px var(--text-normal);
+}
 
 .insetshadow{
   box-shadow: inset 0px 2px 2px var(--text-normal);
 }
+
 :root{
   @apply font-noto text-sm bg-bg-main p-0
 }

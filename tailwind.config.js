@@ -44,6 +44,7 @@ module.exports = {
         inpadding: "var(--inpadding)",
         overlay: "var(--overlay)",
         inputvar: "var(--inputvar)",
+        thickoverlay: "var(--thickoverlay)",
       },
       fontFamily: {
         noto: ["Noto Sans Symbols", "sans-serif"],
