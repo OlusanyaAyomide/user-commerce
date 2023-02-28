@@ -1,5 +1,5 @@
 import { createContext,useState } from "react";
-import {categoryItems} from "../store/constants"
+import {categoryItems,discountItems,featuredPoduct} from "../store/constants"
 import { Viewsettings } from "../store/constants";
 
 const Allcontext = createContext({
@@ -17,6 +17,12 @@ const Allcontext = createContext({
     setOnOverLay:function(){},
     settings:Viewsettings,
     setSettings:function(){},
+    headerInView:true,
+    setHeaderInView:function(){},
+    featured:[],
+    setFeatured:function(){},
+    topDiscounts:[],
+    setTopDiscounts:function(){},
     
 })
 
@@ -28,7 +34,9 @@ export function AllContextProvider(props){
     const [isSearching,setIsSearching] = useState(false)
     const [onOverLay,setOnOverLay] = useState(false)
     const [settings,setSettings] = useState(Viewsettings)
-
+    const [headerInView,setHeaderInView] = useState(true)
+    const [featured,setFeatured] = useState(featuredPoduct)
+    const [topDiscounts,setTopDiscounts] = useState(discountItems)
 
     const context = {
         isnavActive,
@@ -45,6 +53,12 @@ export function AllContextProvider(props){
         onOverLay,
         settings,
         setSettings,
+        headerInView,
+        setHeaderInView,
+        featured,
+        setFeatured,
+        topDiscounts,
+        setTopDiscounts,
     }
     return <Allcontext.Provider value={context}>{props.children}</Allcontext.Provider>
 }

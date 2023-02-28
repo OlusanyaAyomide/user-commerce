@@ -106,3 +106,41 @@ export const NavBarMotion = {
         }   
     }
 }
+
+export const fadeIn = {
+    initial:{
+        opacity:0.6,
+        transition:{
+            duration:0
+        }   
+    },
+    animate:{
+        opacity:1,
+        transition:{
+            duration:0.5,
+            repeat:Infinity,
+            // repeatType:"reverse"
+            repeatDelay:10
+        }
+    }
+}
+
+export const FeaturedAnimation = (index)=>{
+ return{
+    initial:{
+        x:100,
+        scaleY:index===0?0.6:1
+    },
+    animate:{
+        x:0,
+        scaleY:1,
+        transition:{
+            duration:0.6,
+        //     repeat:Infinity,
+        //     // repeatType:"reverse"
+        //     repeatDelay:3.8
+        // }
+    }
+}
+ }  
+}

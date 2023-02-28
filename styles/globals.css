@@ -10,9 +10,13 @@
   --text-thick:#151b3f;
   --text-normal:theme("colors.gray.900");
   --inpadding:white;
-  --overlay:rgb(0 0 0 / 0.1);
+  --overlay:rgb(0 0 0 / 0.4);
   --inputvar:#eaeef5;
-  --thickoverlay:rgb(0 0 0 / 0.5);
+  --thickoverlay:rgb(0 0 0 / 0.4);
+  --light-text:theme("colors.gray.600");
+  --product-overlay:theme("colors.gray.200");
+  --sundry:theme("colors.blue.400");
+  --sundrytwo:theme("colors.orange.300");
 
   font-size: 14px;
   font-family:"noto";
@@ -32,6 +36,7 @@
   --overlay:rgb(255 255 255 / 0.1);
   --inputvar:#111118;
   --thickoverlay:rgb(255 255 255 / 0.6);
+  --light-text:theme("colors.gray.400");
 }
 
 
@@ -48,6 +53,19 @@
   --thickoverlay:rgb(255 255 255 / 0.6);
 
 }
+[data-theme = 'grayyellowD']{
+  --background-light:black;
+  --background-secondary: black;
+  --dominant: #BAFF39;
+  --text-thick:#e1e9cd;
+  --text-normal:theme("colors.gray.100"); 
+  --inpadding:white;
+  --overlay:rgb(0 0 0 / 0.1);
+  --inputvar:#d0d0e0;
+  --thickoverlay:rgb(255 255 255 / 0.6);
+
+}
+
 
 
 
@@ -159,6 +177,27 @@
 .insetshadow{
   box-shadow: inset 0px 2px 2px var(--text-normal);
 }
+.featuredshadow1{
+  box-shadow: 2px 2px 5px var(--text-normal);
+}
+.featuredshadow2{
+  box-shadow: 2px 2px 5px var(--text-normal);
+
+}
+.featuredgradient{
+  background: linear-gradient(3deg ,var(--background-light) 50%,var(--background-secondary) 50%);
+}
+.discountshadow{
+  box-shadow: 0px 0px 5px (var(--text-normal));
+}
+.cartgrad{
+  background-image: linear-gradient(8deg ,var(--background-light) 80%,var(--sundry) 82%); 
+}
+.productshadow{
+  box-shadow:0px 0px 4px var(--text-normal);
+}
+
+
 
 :root{
   @apply font-noto text-sm bg-bg-main p-0
@@ -190,5 +229,19 @@
 .onhover{
   @apply hover:before:inset-0 overflow-hidden hover:before:bg-overlay hover:before:absolute hover:text-[105%] hover:before:rounded-md
 }
-
+.navhover{
+  @apply hover:before:-inset-1 hover:before:absolute hover:before:rounded-xl hover:before:top-0 hover:before:transition-all hover:before:duration-500 hover:before:bg-overlay hover:text-dominant
+}
+.darkoverlay{
+  @apply before:absolute before:inset-0 before:bg-black/50 h-full overflow-hidden
+}
+.darkoverlay2{
+  @apply before:absolute  before:bg-black/50 h-full overflow-hidden before:inset-1 rounded-lg
+}
+.productoverlay{
+  @apply relative before:absolute before:inset-0 before:bg-black/20 h-full overflow-hidden 
+}
+.imageoverlay{
+  @apply relative before:absolute before:inset-0 before:bg-overlay h-full overflow-hidden 
+}
 @tailwind utilities;

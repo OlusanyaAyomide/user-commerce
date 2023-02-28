@@ -3,8 +3,10 @@ import Header from '@/components/stores/Header'
 import Allcontext from '@/store/Allcontext'
 import OverLay from '@/components/utils/onOverLay'
 import Hero from '@/components/stores/Hero'
-import NavBar from '@/components/utils/NavBar'
-import { AnimatePresence } from 'framer-motion'
+import Category from '@/components/stores/Category'
+import FeaturdProduct from '@/components/stores/FeaturdProduct'
+import Discount from '@/components/stores/Discount'
+import ProductList from '@/components/stores/ProductList'
 
 export default function Index() {
   const {onOverLay,isnavActive} = useContext(Allcontext)
@@ -14,7 +16,10 @@ export default function Index() {
         <Header/>
         {onOverLay && <OverLay/>}
         <Hero/>
-        <AnimatePresence>{isnavActive &&  <NavBar/>}</AnimatePresence>
+        <Discount/>
+        <Category/>
+        <FeaturdProduct/>
+        <ProductList/>
         </div>      
       </Fragment>
   )

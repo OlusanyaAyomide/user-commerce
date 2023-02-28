@@ -45,6 +45,10 @@ module.exports = {
         overlay: "var(--overlay)",
         inputvar: "var(--inputvar)",
         thickoverlay: "var(--thickoverlay)",
+        "light-text": "var(--light-text)",
+        "product-overlay": "var(--product-overlay)",
+        sundry: "var(--sundry)",
+        sundrytwo: "var(--sundrytwo)",
       },
       fontFamily: {
         noto: ["Noto Sans Symbols", "sans-serif"],

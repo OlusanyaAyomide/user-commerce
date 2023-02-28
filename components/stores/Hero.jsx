@@ -5,14 +5,14 @@ import Allcontext from '@/store/Allcontext'
 import CustomTypeWriter from '../utils/CustomTypeWriter'
 
 export default function Hero() {
-  const {settings:{heroSection:{position,stripBackground,textStrings}}} = useContext(Allcontext)
+  const {settings:{heroSection:{position,stripBackground,textStrings}},headerInView} = useContext(Allcontext)
   const [onFocus,setOnFocus] = useState(false)
   return (
-    <section className='w-full h-[500px] relative'>
+    <section className={`w-full h-[560px] md:h-[540px] relative ${!headerInView?"mt-[52px]":""}`}>
         <Image src={HeroImage} alt="" style={{objectFit:"cover",height:"100%", width:"100%"}} priority/>
         {stripBackground && <div className='absolute inset-0 hero-gradient opacity-20 before:absolute before:inset-0 before:bg-overlay before:opacity-100'></div>}
         <div className='absolute bg-overlay inset-0'></div>
-        <div className={`absolute text-inpadding bottom-12 w-8/12 sm:text-[38px] md:w-[600px] md:text-5xl lg:text-6xl text-4xl font-extrabold  ${position === "left"?"left-2 md:left-4 lg:left-8":" right-2 md:right-2 lg:right-8"}`}>
+        <div className={`absolute text-inpadding bottom-28 w-8/12 sm:text-[38px] md:w-[600px] md:text-5xl lg:text-6xl text-4xl font-extrabold  ${position === "left"?"left-2 md:left-4 lg:left-8":" right-2 md:right-2 lg:right-8"}`}>
           {textStrings.length > 1 && <div className='min-h-[200px]'>
           <CustomTypeWriter strings={textStrings}/></div>}
           {textStrings.length === 1 && <div className='min-h-[150px]'><span>{textStrings}</span></div>}

@@ -9,7 +9,7 @@ export default function Dropdown() {
   const {category} = useContext(Allcontext)
   const CategoryList = category.map((item,key)=>{
     return(
-      <span className='relative py-2 px-2 block pr-20 onhover overflow-hidden '><Link href={`${item.name}`}>{item.name}</Link></span>
+      <span className='relative py-2 px-2 block pr-20 onhover overflow-hidden '><Link href={`${item.name}`}><span className='whitespace-nowrap'>{item.name}</span></Link></span>
     )
   })
   return (
